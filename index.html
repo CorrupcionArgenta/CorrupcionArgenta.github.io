@@ -1,0 +1,42 @@
+< !DOCTYPE html>
+	<html>
+  <head>
+  <title>Corrupcion_Argenta</title>
+  <style>
+#cuadrado{ width:300px; height:300px; overflow:hidden;}
+#mapa{ position:relative; left:-300px; top:-300px; }
+#pj1{ position:absolute; left:150px; top:120px;}
+</style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body bgcolor=gray>
+  	<div id="cuadrado"><div id="mapa"><img src="./pepr/siu.jpg"></div><div>
+  	<div id="pj1"><img src="./Audiobooks/1688183337395.png" height= "50"></div>
+  <div id="datos"></div>
+</body>
+<script>
+$(document).keypress(function( event ) {
+	switch(event.which)
+	{	
+		case 119: // W
+			$("#datos").text("arriba");
+			$( "#mapa" ).animate({ "top": "+=50px" }, "slow" );
+		break;
+		case 97: // A
+			$("#datos").text("izquierda");
+			$( "#mapa" ).animate({ "left": "+=50px" }, "slow" );
+		break;
+		case 100: // D
+			$("#datos").text("derecha");
+			$( "#mapa" ).animate({ "left": "-=50px" }, "slow" );
+		break;
+		case 115: // S
+			$("#datos").text("abajo");
+			$( "#mapa" ).animate({ "top": "-=50px" }, "slow" );
+		break;
+	}
+    $("#datos").text("tecla:"+event.which);
+  });
+</script>
+</html>
+ 
